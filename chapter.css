@@ -51,6 +51,7 @@ a {
   max-width: 100%;
   box-sizing: border-box;
   border-radius: 40px;
+  text-align: center;
 }
 a:hover {
   background-color: #060953;
@@ -128,7 +129,7 @@ button {
   }
 
   a {
-    padding: 10px 25px;
+    text-align: center;
   }
   .jump {
     display: flex;
