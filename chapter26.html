@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Healing Page</title>
     <style>
-      /* Grundlayout und Design */
       body {
         margin: 0;
         padding: 0;
@@ -72,7 +71,6 @@
         max-width: 600px;
       }
 
-      /* Steuerung (Buttons) */
       .controls {
         position: absolute;
         bottom: 20px;
@@ -92,6 +90,7 @@
         border-radius: 5px;
         cursor: pointer;
         transition: background 0.2s;
+        z-index: 50;
       }
 
       button:hover {
@@ -103,56 +102,51 @@
       #toStart:hover {
         background-color: #03386e;
       }
-      /* Medienabfrage für Laptops und größere Bildschirme */
+
       @media (min-width: 1024px) {
         .slider-container {
-          width: 95%; /* Nutzt fast die gesamte Bildschirmbreite */
-          max-width: 1400px; /* Deutlich breiter als auf kleineren Bildschirmen */
-          height: 80vh; /* Nutzt 80% der verfügbaren Bildschirmhöhe */
-          border-radius: 16px; /* Etwas modernere, größere Ecken */
+          width: 95%;
+          max-width: 1400px;
+          height: 80vh;
+          border-radius: 16px;
         }
         .slider-container:hover {
-          width: 95%; /* Nutzt fast die gesamte Bildschirmbreite */
-          max-width: 1400px; /* Deutlich breiter als auf kleineren Bildschirmen */
-          height: 90vh; /* Nutzt 80% der verfügbaren Bildschirmhöhe */
-          border-radius: 16px; /* Etwas modernere, größere Ecken */
+          width: 95%;
+          max-width: 1400px;
+          height: 90vh;
+          border-radius: 16px;
         }
 
         .slide {
-          padding: 40px; /* Verkleinert den Innenabstand, um mehr Platz fürs Bild zu schaffen */
+          padding: 40px;
         }
 
         .slide img {
-          max-height: calc(
-            100% - 80px
-          ); /* Mehr Puffer zu den größeren Buttons auf Laptops */
+          max-height: calc(100% - 80px);
         }
 
-        /* Selektiert das Bild in der zweiten Folie */
         .slider-container .slide img {
-          transition: transform 0.3s ease-in-out; /* Sorgt für eine fließende Bewegung beim Hovern */
-          cursor: zoom-in; /* Ändert den Mauszeiger zu einer Lupe (optional) */
+          transition: transform 0.3s ease-in-out;
+          cursor: zoom-in;
         }
 
-        /* Der Zoom-Effekt beim Hovern */
         .slider-container .slide img:hover {
-          transform: scale(1.3); /* Vergrößert das Bild um das 1,3-Fache */
+          transform: scale(1.3);
           z-index: 30;
         }
-        /* Selektiert das Bild in der zweiten Folie */
+
         .slider-container .slide:nth-child(1) img {
-          transition: transform 0.3s ease-in-out; /* Sorgt für eine fließende Bewegung beim Hovern */
-          cursor: zoom-in; /* Ändert den Mauszeiger zu einer Lupe (optional) */
+          transition: transform 0.3s ease-in-out;
+          cursor: zoom-in;
         }
 
-        /* Der Zoom-Effekt beim Hovern */
         .slider-container .slide:nth-child(1) img:hover {
           transform: scale(1.5) translateY(-5%);
           z-index: 30;
         }
         button {
-          padding: 15px 30px; /* Macht die Buttons auf dem Laptop leichter anklickbar */
-          font-size: 1.2rem; /* Größere Schrift für die Steuerung */
+          padding: 15px 30px;
+          font-size: 1.2rem;
         }
       }
     </style>
@@ -235,7 +229,17 @@
       <div class="slide active">
         <img src="Images/Healing1.png" />
       </div>
-
+      <!-- Folie 20 -->
+      <div
+        class="slide active"
+        style="background-color: black; z-index: &quot;40&quot;"
+      >
+        <div class="intro">
+          <h1>Willkommen zu den Healing Slides</h1>
+          <br />
+          <p>klicke einfach die Slides durch</p>
+        </div>
+      </div>
       <div class="controls">
         <button id="prevBtn">Zurück</button>
         <button id="nextBtn">Weiter</button>
