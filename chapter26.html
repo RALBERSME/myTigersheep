@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healing Page</title>
+    <style>
+      /* Grundlayout und Design */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .slider-container {
+        position: relative;
+        width: 80%;
+        max-width: 900px;
+        height: 500px;
+        background-color: #2c2c2c;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        padding: 5px;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        pointer-events: none;
+      }
+
+      .slide.active {
+        opacity: 1;
+        pointer-events: auto;
+        padding: 25px;
+      }
+      .slide img {
+        max-width: 100%;
+        max-height: calc(100% - 60px);
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: auto;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #4caf50;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        max-width: 600px;
+      }
+
+      /* Steuerung (Buttons) */
+      .controls {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        z-index: 10;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      button:hover {
+        background-color: #0e6312;
+      }
+      #toStart {
+        background-color: #1b87f3;
+      }
+      #toStart:hover {
+        background-color: #03386e;
+      }
+      /* Medienabfrage für Laptops und größere Bildschirme */
+      @media (min-width: 1024px) {
+        .slider-container {
+          width: 95%; /* Nutzt fast die gesamte Bildschirmbreite */
+          max-width: 1400px; /* Deutlich breiter als auf kleineren Bildschirmen */
+          height: 80vh; /* Nutzt 80% der verfügbaren Bildschirmhöhe */
+          border-radius: 16px; /* Etwas modernere, größere Ecken */
+        }
+        .slider-container:hover {
+          width: 95%; /* Nutzt fast die gesamte Bildschirmbreite */
+          max-width: 1400px; /* Deutlich breiter als auf kleineren Bildschirmen */
+          height: 90vh; /* Nutzt 80% der verfügbaren Bildschirmhöhe */
+          border-radius: 16px; /* Etwas modernere, größere Ecken */
+        }
+
+        .slide {
+          padding: 40px; /* Verkleinert den Innenabstand, um mehr Platz fürs Bild zu schaffen */
+        }
+
+        .slide img {
+          max-height: calc(
+            100% - 80px
+          ); /* Mehr Puffer zu den größeren Buttons auf Laptops */
+        }
+
+        /* Selektiert das Bild in der zweiten Folie */
+        .slider-container .slide img {
+          transition: transform 0.3s ease-in-out; /* Sorgt für eine fließende Bewegung beim Hovern */
+          cursor: zoom-in; /* Ändert den Mauszeiger zu einer Lupe (optional) */
+        }
+
+        /* Der Zoom-Effekt beim Hovern */
+        .slider-container .slide img:hover {
+          transform: scale(1.3); /* Vergrößert das Bild um das 1,3-Fache */
+          z-index: 30;
+        }
+        /* Selektiert das Bild in der zweiten Folie */
+        .slider-container .slide:nth-child(1) img {
+          transition: transform 0.3s ease-in-out; /* Sorgt für eine fließende Bewegung beim Hovern */
+          cursor: zoom-in; /* Ändert den Mauszeiger zu einer Lupe (optional) */
+        }
+
+        /* Der Zoom-Effekt beim Hovern */
+        .slider-container .slide:nth-child(1) img:hover {
+          transform: scale(1.5) translateY(-5%);
+          z-index: 30;
+        }
+        button {
+          padding: 15px 30px; /* Macht die Buttons auf dem Laptop leichter anklickbar */
+          font-size: 1.2rem; /* Größere Schrift für die Steuerung */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-container">
+      <!-- Folie 1 -->
+      <div class="slide active">
+        <img src="Images/Healing2.png" />
+      </div>
+      <!-- Folie 2 -->
+      <div class="slide active">
+        <img src="Images/Healing19.png" />
+      </div>
+      <!-- Folie 3 -->
+      <div class="slide active">
+        <img src="Images/Healing3.png" />
+      </div>
+      <!-- Folie 4 -->
+      <div class="slide active">
+        <img src="Images/Healing4.png" />
+      </div>
+      <!-- Folie 5 -->
+      <div class="slide active">
+        <img src="Images/Healing5.png" />
+      </div>
+      <!-- Folie 6 -->
+      <div class="slide active">
+        <img src="Images/Healing6.png" />
+      </div>
+      <!-- Folie 7 -->
+      <div class="slide active">
+        <img src="Images/Healing7.png" />
+      </div>
+      <!-- Folie 8 -->
+      <div class="slide active">
+        <img src="Images/Healing8.png" />
+      </div>
+      <!-- Folie 9 -->
+      <div class="slide active">
+        <img src="Images/Healing9.png" />
+      </div>
+      <!-- Folie 10 -->
+      <div class="slide active">
+        <img src="Images/Healing10.png" />
+      </div>
+      <!-- Folie 11 -->
+      <div class="slide active">
+        <img src="Images/Healing11.png" />
+      </div>
+      <!-- Folie 12 -->
+      <div class="slide active">
+        <img src="Images/Healing12.png" />
+      </div>
+      <!-- Folie 13 -->
+      <div class="slide active">
+        <img src="Images/Healing13.png" />
+      </div>
+      <!-- Folie 14 -->
+      <div class="slide active">
+        <img src="Images/Healing14.png" />
+      </div>
+      <!-- Folie 15 -->
+      <div class="slide active">
+        <img src="Images/Healing15.png" />
+      </div>
+      <!-- Folie 16 -->
+      <div class="slide active">
+        <img src="Images/Healing16.png" />
+      </div>
+      <!-- Folie 17 -->
+      <div class="slide active">
+        <img src="Images/Healing17.png" />
+      </div>
+      <!-- Folie 18 -->
+      <div class="slide active">
+        <img src="Images/Healing18.png" />
+      </div>
+      <!-- Folie 19 -->
+      <div class="slide active">
+        <img src="Images/Healing1.png" />
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn">Zurück</button>
+        <button id="nextBtn">Weiter</button>
+        <button onclick="window.location.href = 'intro.html'" id="toStart">
+          zurück zum Anfang
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+          nextBtn.click();
+        } else if (e.key === "ArrowLeft") {
+          prevBtn.click();
+        }
+      });
+    </script>
+  </body>
+</html>
